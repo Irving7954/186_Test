@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dot.h"
-
 /*  Compile by
 gcc main.c dot.c -o main
 */
@@ -9,8 +8,8 @@ void scanV(double v[], int num) {
 	for (int i=0; i<num; i++) {
 		scanf(" %lf", &(v[i]));
 		}
-	}
-
+}
+	
 int main(int argc, char* argv[]) {
 	int vLen = 0;
 	double *v1;
@@ -32,15 +31,10 @@ int main(int argc, char* argv[]) {
 	scanV(v1, vLen);
 
     printf("Enter a vector of %d numbers on one line separated by spaces\n", vLen);
-	scanV(v2, vLen);
-	for(int i = 0; i < vLen; i++)
-		printf("%lf %lf ", v1[i], v2[i]);
-	printf("\n");
 	dot1 = dot(v1, v2, vLen);
 	dot2 = dot(v2, v1, vLen);
 
 	printf("The first dot product: %lf should be the same as the second: %lf, right?\n", dot1, dot2);
 
 	return 0;
-	}
-	
+}
